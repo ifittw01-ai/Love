@@ -390,29 +390,27 @@ function doGet(e) {
       const regions = [];
       
       // 從第二列開始讀取
-      // 表格結構：ID | 國家 | 順序 | 地點描述 | 是否啟用
+      // 表格結構：ID | 國家 | 地點描述 | 是否啟用
       for (let i = 1; i < data.length; i++) {
         const id = data[i][0];                          // 第1列：ID
         const regionCountry = String(data[i][1]).trim(); // 第2列：國家 (TW/MY)
-        const order = data[i][2];                        // 第3列：順序
-        const description = data[i][3];                  // 第4列：地點描述
-        const isActive = String(data[i][4]).trim();      // 第5列：是否啟用
+        const description = data[i][2];                  // 第3列：地點描述
+        const isActive = String(data[i][3]).trim();      // 第4列：是否啟用
         
         // 只返回匹配國家且啟用的地點
         const active = (isActive === '是' || isActive === 'yes' || isActive === 'YES' || 
-                       isActive === 'true' || isActive === 'TRUE' || isActive === '1');
+                       isActive === 'true' || isActive === 'TRUE' || isActive === '1' ||
+                       isActive === '');  // 空白也視為啟用
         
         if (id && regionCountry === country && description && active) {
           regions.push({
             id: String(id),
-            text: String(description),
-            order: order || 999  // 如果沒有順序，放到最後
+            text: String(description)
           });
         }
       }
       
-      // 按順序排序
-      regions.sort((a, b) => a.order - b.order);
+      // 不需要排序，直接按照 Sheet 中的行順序顯示
       
       Logger.log('✅ 找到 ' + regions.length + ' 個地點（' + country + '）');
       
