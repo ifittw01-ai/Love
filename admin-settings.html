@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時間地點設定 - AI自動引客系統</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.95;
+            font-size: 1rem;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .option-group {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .option-label {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .preview {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .preview h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        
+        .preview-option {
+            background: white;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border-left: 3px solid #ffc107;
+        }
+        
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: none;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        
+        .current-settings {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .current-settings h3 {
+            color: #004085;
+            margin-bottom: 15px;
+        }
+        
+        .current-value {
+            background: white;
+            padding: 10px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .instructions h3 {
+            color: #17a2b8;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+        }
+        
+        .instructions li {
+            margin: 8px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚙️ 時間地點設定</h1>
+            <p>設定報名表單中的時間地點選項</p>
+        </div>
+        
+        <div class="content">
+            <div class="instructions">
+                <h3>📋 使用說明</h3>
+                <ol>
+                    <li>在下方輸入您想要的時間地點選項</li>
+                    <li>點擊「預覽效果」查看設定結果</li>
+                    <li>點擊「生成更新代碼」獲取代碼</li>
+                    <li>複製代碼並替換 index.html 第 589-591 行</li>
+                    <li>推送到 GitHub，所有訪客都能看到新設定 🌐</li>
+                </ol>
+                <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin-top: 15px; border-left: 4px solid #ffc107;">
+                    <strong>⚠️ 重要：</strong>本地儲存只在您的瀏覽器有效。要讓所有訪客看到更新，必須修改 HTML 並推送到 GitHub！
+                </div>
+            </div>
+            
+            <div class="current-settings" id="currentSettings">
+                <h3>📍 目前設定</h3>
+                <div class="current-value">選項 1: <strong>10/28 下午 2:00~4:00 台北市信義區永吉路249號2樓</strong></div>
+                <div class="current-value">選項 2: <strong>10/30 晚上 6:30~8:30 台北市信義區永吉路249號2樓</strong></div>
+                <div class="current-value">選項 3: <strong>未定</strong></div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">
+                    <span>📝</span>
+                    <span>設定時間地點選項</span>
+                </div>
+                
+                <div class="option-group">
+                    <div class="option-label">選項 1</div>
+                    <div class="form-group">
+                        <label for="option1Value">選項值（用於表單提交）</label>
+                        <input type="text" id="option1Value" placeholder="例如: 1, time1, 2024-01-15" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="option1Text">顯示文字（用戶看到的內容）</label>
+                        <input type="text" id="option1Text" placeholder="例如: 10/28 下午 2:00~4:00 台北市..." value="10/28 下午 2:00~4:00 台北市信義區永吉路249號2樓">
+                    </div>
+                </div>
+                
+                <div class="option-group">
+                    <div class="option-label">選項 2</div>
+                    <div class="form-group">
+                        <label for="option2Value">選項值</label>
+                        <input type="text" id="option2Value" placeholder="例如: 2, time2, 2024-01-20" value="2">
+                    </div>
+                    <div class="form-group">
+                        <label for="option2Text">顯示文字</label>
+                        <input type="text" id="option2Text" placeholder="例如: 10/30 晚上 6:30~8:30 台北市..." value="10/30 晚上 6:30~8:30 台北市信義區永吉路249號2樓">
+                    </div>
+                </div>
+                
+                <div class="option-group">
+                    <div class="option-label">選項 3</div>
+                    <div class="form-group">
+                        <label for="option3Value">選項值</label>
+                        <input type="text" id="option3Value" placeholder="例如: 3, time3, 2024-01-25" value="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="option3Text">顯示文字</label>
+                        <input type="text" id="option3Text" placeholder="例如: 未定" value="未定">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview" id="preview" style="display: none;">
+                <h3>👀 預覽效果</h3>
+                <div class="preview-option" id="preview1"></div>
+                <div class="preview-option" id="preview2"></div>
+                <div class="preview-option" id="preview3"></div>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-secondary" onclick="previewSettings()">👀 預覽效果</button>
+                <button class="btn btn-primary" onclick="generateCode()">📋 生成更新代碼</button>
+            </div>
+            
+            <div class="alert alert-info" id="codeAlert" style="display: none; margin-top: 30px;">
+                <h3>📋 更新代碼</h3>
+                <p style="margin-bottom: 10px;"><strong>步驟：</strong></p>
+                <ol style="margin-left: 20px; margin-bottom: 15px;">
+                    <li>複製下方代碼</li>
+                    <li>打開 <code>index.html</code></li>
+                    <li>找到第 589-591 行</li>
+                    <li>用複製的代碼替換這三行</li>
+                    <li>執行 <code>git add index.html</code></li>
+                    <li>執行 <code>git commit -m "更新時間地點"</code></li>
+                    <li>執行 <code>git push origin main</code></li>
+                </ol>
+                <textarea id="generatedCode" readonly style="width: 100%; height: 120px; font-family: monospace; padding: 15px; border: 2px solid #17a2b8; border-radius: 8px; background: #f8f9fa; font-size: 13px;"></textarea>
+                <button onclick="copyCode()" style="margin-top: 15px; padding: 12px 30px; background: #17a2b8; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1rem;">📋 複製代碼</button>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script>
+        // 預覽效果
+        function previewSettings() {
+            const option1Text = document.getElementById('option1Text').value || '北部';
+            const option2Text = document.getElementById('option2Text').value || '中部';
+            const option3Text = document.getElementById('option3Text').value || '南部';
+            
+            document.getElementById('preview1').textContent = `✅ ${option1Text}`;
+            document.getElementById('preview2').textContent = `✅ ${option2Text}`;
+            document.getElementById('preview3').textContent = `✅ ${option3Text}`;
+            
+            document.getElementById('preview').style.display = 'block';
+        }
+        
+        // 生成代碼
+        function generateCode() {
+            const option1Value = document.getElementById('option1Value').value;
+            const option1Text = document.getElementById('option1Text').value;
+            const option2Value = document.getElementById('option2Value').value;
+            const option2Text = document.getElementById('option2Text').value;
+            const option3Value = document.getElementById('option3Value').value;
+            const option3Text = document.getElementById('option3Text').value;
+            
+            const code = `                                    <option value="${option1Value}">${option1Text}</option>
+                                    <option value="${option2Value}">${option2Text}</option>
+                                    <option value="${option3Value}">${option3Text}</option>`;
+            
+            document.getElementById('generatedCode').value = code;
+            document.getElementById('codeAlert').style.display = 'block';
+            
+            // 滾動到代碼區域
+            document.getElementById('codeAlert').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // 自動預覽
+            previewSettings();
+        }
+        
+        // 複製代碼
+        function copyCode() {
+            const codeArea = document.getElementById('generatedCode');
+            codeArea.select();
+            codeArea.setSelectionRange(0, 99999); // For mobile devices
+            
+            try {
+                document.execCommand('copy');
+                
+                // 顯示複製成功
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✅ 已複製！';
+                btn.style.background = '#28a745';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#17a2b8';
+                }, 2000);
+            } catch (err) {
+                alert('複製失敗，請手動複製');
+            }
+        }
+    </script>
+</body>
+</html>
+
