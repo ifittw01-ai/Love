@@ -453,8 +453,53 @@ function updatePageLanguage(lang) {
     // 更新 HTML lang 屬性
     document.documentElement.lang = lang;
     
+    // 🖼️ 根據語言動態更新社交媒體分享圖片
+    updateSocialMediaImage(lang);
+    
     // 觸發自定義事件，通知其他腳本語言已更改
     window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+}
+
+// 根據語言更新社交媒體分享圖片
+function updateSocialMediaImage(lang) {
+    // 根據語言選擇圖片
+    let imageName;
+    if (lang === 'zh-CN') {
+        // 簡體中文使用 AIMakeMoneyC.png
+        imageName = 'AIMakeMoneyC.png';
+    } else {
+        // 繁體中文和其他語言使用 AIMakeMoney.png
+        imageName = 'AIMakeMoney.png';
+    }
+    
+    const baseUrl = 'https://ifittw01-ai.github.io/AI-auto-global/data/';
+    const imageUrl = baseUrl + imageName;
+    
+    // 更新 Open Graph 圖片（Facebook、LINE 等會讀取）
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    const ogImageSecure = document.querySelector('meta[property="og:image:secure_url"]');
+    
+    if (ogImage) {
+        ogImage.setAttribute('content', imageUrl);
+        console.log('✅ 已更新 og:image 為:', imageName);
+    }
+    
+    if (ogImageSecure) {
+        ogImageSecure.setAttribute('content', imageUrl);
+    }
+    
+    // 更新 LINE 專用圖片
+    const lineImage = document.querySelector('meta[name="line:image"]');
+    if (lineImage) {
+        lineImage.setAttribute('content', imageUrl);
+        console.log('✅ 已更新 LINE 圖片為:', imageName);
+    }
+    
+    // 更新 Twitter Card 圖片
+    const twitterImage = document.querySelector('meta[name="twitter:image"]');
+    if (twitterImage) {
+        twitterImage.setAttribute('content', imageUrl);
+    }
 }
 
 // 初始化語言
