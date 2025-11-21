@@ -470,10 +470,14 @@ function updateSocialMediaImage(lang) {
         // 簡體中文使用 AIMakeMoneyC.png
         imageName = 'AIMakeMoneyC.png';
         console.log('✅ 匹配到簡體中文，使用:', imageName);
+    } else if (lang === 'en') {
+        // 英文使用 AIMakeMoneyE.png
+        imageName = 'AIMakeMoneyE.png';
+        console.log('✅ 匹配到英文，使用:', imageName);
     } else {
-        // 繁體中文和其他語言使用 AIMakeMoney.png
+        // 繁體中文（默認）使用 AIMakeMoney.png
         imageName = 'AIMakeMoney.png';
-        console.log('✅ 使用默認圖片:', imageName);
+        console.log('✅ 使用繁體中文圖片:', imageName);
     }
     
     const baseUrl = 'https://ifittw01-ai.github.io/AI-auto-global/data/';
