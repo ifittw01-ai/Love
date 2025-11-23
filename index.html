@@ -37,10 +37,23 @@
     <meta name="keywords" content="AI,自媒體,創業,賺錢,線上課程,限時優惠">
     
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="translations.js" as="script">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- DNS 预解析 -->
+    <link rel="dns-prefetch" href="https://script.google.com">
+    <link rel="dns-prefetch" href="https://cdn.sheetjs.com">
+    
     <!-- SheetJS 用於生成 Excel -->
-    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js" defer></script>
 </head>
 <body>
+    <!-- 页面加载进度条 -->
+    <div id="loading-bar"></div>
+    
     <!-- 語言切換器 -->
     <div class="language-switcher">
         <select id="language-select" onchange="setLanguage(this.value)">
@@ -646,8 +659,8 @@
         </div>
     </div>
 
-    <script src="translations.js?v=2024112201"></script>
-    <script src="script.js?v=2024112201"></script>
+    <script src="translations.js?v=2024112202" defer></script>
+    <script src="script.js?v=2024112202" defer></script>
 </body>
 </html>
 

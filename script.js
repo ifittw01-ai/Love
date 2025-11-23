@@ -1,4 +1,81 @@
 // ========================================
+// 页面性能优化 - 加载进度条和图片渐进式加载
+// ========================================
+
+// 页面加载进度条
+(function() {
+    const loadingBar = document.getElementById('loading-bar');
+    let progress = 0;
+    
+    // 模拟进度增长
+    const interval = setInterval(() => {
+        progress += Math.random() * 10;
+        if (progress >= 90) {
+            progress = 90;
+            clearInterval(interval);
+        }
+        if (loadingBar) {
+            loadingBar.style.width = progress + '%';
+        }
+    }, 200);
+    
+    // 页面完全加载后完成进度
+    window.addEventListener('load', () => {
+        if (loadingBar) {
+            loadingBar.style.width = '100%';
+            setTimeout(() => {
+                loadingBar.style.opacity = '0';
+                setTimeout(() => {
+                    loadingBar.style.display = 'none';
+                }, 300);
+            }, 500);
+        }
+    });
+})();
+
+// 图片渐进式加载效果
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(img => {
+        // 如果图片已经加载完成（来自缓存）
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            // 监听图片加载完成事件
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+            
+            // 处理加载错误
+            img.addEventListener('error', () => {
+                img.classList.add('loaded');
+            });
+        }
+    });
+    
+    // 使用 Intersection Observer 优化懒加载
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.classList.add('loaded');
+                }
+            });
+        }, {
+            rootMargin: '50px' // 提前50px开始加载
+        });
+        
+        images.forEach(img => {
+            if (img.loading === 'lazy') {
+                imageObserver.observe(img);
+            }
+        });
+    }
+});
+
+// ========================================
 // 推廣人員郵箱對照表
 // ========================================
 // 在 email-mapping.html 生成代碼後，將代碼貼在這裡
