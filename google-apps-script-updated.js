@@ -19,7 +19,7 @@
 // ⚠️ 請將下方的 SPREADSHEET_ID 改為你的 Google Sheet ID
 // 如何取得？打開你的 Google Sheet，網址中的長串英數字即為 ID
 // 例如：https://docs.google.com/spreadsheets/d/【這裡就是ID】/edit
-const SPREADSHEET_ID = '1izx4MEi7coasKaULlqLQUDOmXt9qEmQ8GC0ZKfT2XvU';  // ⚠️ 必須修改
+const SPREADSHEET_ID = '1cmLE1clkzQKeqdtLa-DS9JfSEg3wI6hr1egHRujdPiQ';  // ⚠️ 必須修改
 const SHEET_NAME = '推廣人員';  // Sheet 分頁名稱（第1個頁簽）
 const DEFAULT_EMAIL = 'jordantsai777@gmail.com';  // 預設郵箱（找不到推廣代碼時使用）
 const CACHE_DURATION = 600;  // 緩存時間（秒）- 10 分鐘
@@ -214,7 +214,7 @@ WhatsApp：${customerWhatsapp}
 祝您成交順利！🎉
 
 ---
-AI+自媒體創業系統
+AI大腦回春系統
 自動通知系統
     `.trim();
     
@@ -233,7 +233,7 @@ AI+自媒體創業系統
     // 3. 發送確認郵件給報名客戶
     // ========================================
     if (customerEmail) {
-      const customerSubject = `感謝您報名「AI+自媒體創業系統」`;
+      const customerSubject = `感謝您報名「AI大腦回春系統」`;
       
       // 準備地區信息顯示
       const regionInfo = customerRegion ? `\n\n記得您的時間與地址：${customerRegion}` : '';
@@ -241,7 +241,7 @@ AI+自媒體創業系統
       const customerBody = `
 ${customerName}，
 
-感謝您對「AI+自媒體創業系統」有興趣！${regionInfo}
+感謝您對「AI大腦回春系統」有興趣！${regionInfo}
 
 歡迎您的到來！
 
@@ -253,7 +253,7 @@ ${customerName}，
 我們期待與您在社群中見面，一起探索 AI 創業的無限可能！🚀
 
 ---
-AI+自媒體創業系統 團隊
+AI大腦回春系統 團隊
       `.trim();
       
       try {
