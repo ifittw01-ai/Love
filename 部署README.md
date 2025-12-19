@@ -125,7 +125,7 @@ git push origin master
 ### 第五步：等待并测试
 
 1. 等待 1-3 分钟（GitHub Pages 更新时间）
-2. 访问：https://ifittw01-ai.github.io/AI-auto-global/
+2. 访问：https://ifittw01-ai.github.io/Love/
 3. 测试功能（可使用 `test-connection.html`）
 
 ---
@@ -210,13 +210,13 @@ git push origin master
 
 ### 主网站
 ```
-https://ifittw01-ai.github.io/AI-auto-global/
+https://ifittw01-ai.github.io/Love/
 ```
 
 ### 带推广代码
 ```
-https://ifittw01-ai.github.io/AI-auto-global/?ref=001
-https://ifittw01-ai.github.io/AI-auto-global/?ref=jordantsai777
+https://ifittw01-ai.github.io/Love/?ref=001
+https://ifittw01-ai.github.io/Love/?ref=jordantsai777
 ```
 
 ---

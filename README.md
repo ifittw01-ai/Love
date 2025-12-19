@@ -1,4 +1,4 @@
-# 🚀 AI+自媒體創業系統 - 全球版
+   # 🚀 AI大腦回春系統 - 全球版
 
 一個支援多語言、多國家的客戶報名系統，具備自動化郵件通知功能。
 
@@ -16,9 +16,9 @@
 
 ## 🌐 網站連結
 
-**主網站：** https://ifittw01-ai.github.io/AI-auto-global/
+**主網站：** https://ifittw01-ai.github.io/Love/
 
-**帶推廣代碼：** https://ifittw01-ai.github.io/AI-auto-global/?ref=001
+**帶推廣代碼：** https://ifittw01-ai.github.io/Love/?ref=001
 
 ## 📋 系統架構
 
@@ -126,7 +126,7 @@
 - 內容：客戶完整資訊、建議聯繫方式
 
 ### 客戶確認郵件
-- 主旨：`感謝您報名「AI+自媒體創業系統」`
+- 主旨：`感謝您報名「AI大腦回春系統」`
 - 內容：歡迎訊息、活動資訊、LINE 社群連結
 
 ## 🔧 配置
@@ -209,4 +209,4 @@
 
 **版本：** 1.0.0 - 最終簡化版（3 個頁簽）
 
-Made with ❤️ for AI+自媒體創業系統
+Made with ❤️ for AI大腦回春系統

@@ -36,7 +36,7 @@ if %errorlevel% == 0 (
     echo 📍 预计 1-3 分钟后可访问
     echo.
     echo 🔗 网站地址：
-    echo    https://ifittw01-ai.github.io/AI-auto-global/
+    echo    https://ifittw01-ai.github.io/Love/
     echo.
     echo 💡 提示：按 Ctrl+F5 强制刷新页面
     echo ========================================

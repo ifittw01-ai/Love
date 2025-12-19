@@ -136,7 +136,7 @@ Click the button below to activate:
 
 **郵件內容範例：**
 ```
-主旨：🎉 新報名：AI+自媒體創業系統
+主旨：🎉 新報名：AI大腦回春系統
 
 姓名：測試用戶
 電子郵件：test@example.com

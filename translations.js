@@ -56,7 +56,7 @@ const translations = {
         'after-5': '✅ 工作有熱情，生活也重新發光。',
         
         // 新日常場景
-        'daily-life-title': '有了AI+自媒體創業系統之後....',
+        'daily-life-title': '有了AI大腦回春系統之後....',
         'scenario-1': '起床時不再擔心要塞車出門',
         'scenario-2': '有客戶自動報名或預約了解服務',
         'scenario-3': '系統已自動發出感謝或回覆，加line 或 whatsapp 或 簡訊通知客戶',
@@ -69,19 +69,19 @@ const translations = {
         'urgency-badge': '報名人數已超過 92%，優惠隨時截止',
         'mid-cta-original': '原價 NT$2,000元',
         'mid-cta-current': '✅ 現在限時線上報名中',
-        'package-info': 'AI+自媒體創業系統',
+        'package-info': 'AI大腦回春系統',
         
         // 學員評價
         'testimonials-title': '真實學員回饋',
         'testimonial-1-name': '林先生',
         'testimonial-1-role': '銀行經理',
-        'testimonial-1-text': '有了AI+自媒體創業系統，原來愛運動的我也能成為網路自媒體創業者， 直接跟著實操，收入很快超過我上班的收入，現在有非常多的時間可以騎腳踏車,爬山,游泳,練球,等等，生活品質大大提升',
+        'testimonial-1-text': '有了AI大腦回春系統，原來愛運動的我也能成為網路自媒體創業者， 直接跟著實操，收入很快超過我上班的收入，現在有非常多的時間可以騎腳踏車,爬山,游泳,練球,等等，生活品質大大提升',
         'testimonial-2-name': '高小姐',
         'testimonial-2-role': '餐飲業者',
-        'testimonial-2-text': '報名AI+自媒體創業系統，一開始還有點懷疑，就試試吧。沒想到一啟動系統，不到一週，就有人自己找上門了！真的太神奇了',
+        'testimonial-2-text': '報名AI大腦回春系統，一開始還有點懷疑，就試試吧。沒想到一啟動系統，不到一週，就有人自己找上門了！真的太神奇了',
         'testimonial-3-name': '曾小姐',
         'testimonial-3-role': '護理師',
-        'testimonial-3-text': '高壓力的工作環境下，如果沒有樂觀的心態，真的很難撐下去，很開心遇到AI+自媒體創業系統，本來還擔心太複雜，沒想到有團隊幫忙，不只找到方法與機會，還可以學會最先進的AI與自媒體變現能力，真的太棒了。',
+        'testimonial-3-text': '高壓力的工作環境下，如果沒有樂觀的心態，真的很難撐下去，很開心遇到AI大腦回春系統，本來還擔心太複雜，沒想到有團隊幫忙，不只找到方法與機會，還可以學會最先進的AI與自媒體變現能力，真的太棒了。',
         
         // FAQ
         'faq-title': '常見問題',
@@ -487,7 +487,7 @@ function updateSocialMediaImage(lang) {
         console.log('✅ 使用繁體中文圖片:', imageName);
     }
     
-    const baseUrl = 'https://ifittw01-ai.github.io/AI-auto-global/data/';
+    const baseUrl = 'https://ifittw01-ai.github.io/Love/data/';
     const imageUrl = baseUrl + imageName;
     
     // 更新 Open Graph 圖片（Facebook、LINE 等會讀取）
