@@ -128,21 +128,15 @@
         </div>
     </section>
 
-    <!-- 视频演示区 -->
+    <!-- 视频演示区 
     <section class="video-section">
         <div class="container">
             <p class="video-instruction" data-i18n="video-instruction">🔊 確保你打開聲音，等待影片載入...</p>
             <div class="video-wrapper">
-                <iframe 
-                    width="100%" 
-                    height="450" 
-                    src="https://www.youtube.com/embed/w3nBw-6nwQ4?start=46&autoplay=1&mute=1" 
-                    title="AI大腦回春系統介紹" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen
-                    style="border-radius: 12px;">
-                </iframe>
+                <video id="mainVideo" width="100%" height="100%" controls controlsList="nodownload" autoplay muted loop playsinline style="border: none;">
+                    <source src="data/IG6.mp4" type="video/mp4">
+                    您的瀏覽器不支援影片播放。
+                </video>
             </div>
         </div>
     </section> 
@@ -241,10 +235,6 @@
                 <div class="scenario-item">
                     <div class="scenario-icon">📈</div>
                     <p data-i18n="scenario-3">AI系統幫你完成了最有效的訓練</p>
-                </div>
-                <div class="scenario-item">
-                    <div class="scenario-icon">👵</div>
-                    <p data-i18n="scenario-4">若你是照顧者：長輩也能跟著做</p>
                 </div>
             </div>
             <p class="highlight-text" data-i18n="highlight-text">✨ 這就是「大腦活化系統」帶來的安心感 ✨</p>
