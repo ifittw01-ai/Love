@@ -7,7 +7,7 @@
 // ========================================
 // 配置设置
 // ========================================
-const SPREADSHEET_ID = '1izx4MEi7coasKaULlqLQUDOmXt9qEmQ8GC0ZKfT2XvU';  // 你的 Google Sheet ID
+const SPREADSHEET_ID = '1cmLE1clkzQKeqdtLa-DS9JfSEg3wI6hr1egHRujdPiQ';  // 你的 Google Sheet ID
 const SHEET_NAME_PROMOTERS = '推廣人員';  // 推广人员工作表
 const SHEET_NAME_REGIONS = '評估地點';    // 评估地点工作表
 const SHEET_NAME_CUSTOMERS = '客戶報名記錄';  // 客户报名记录工作表
