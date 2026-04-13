@@ -655,6 +655,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 🆕 初始化國家-地區聯動
     initCountryRegionSync();
     
+    // 🕒 初始化右上角時間地點選單
+    initHeaderLocationSelect();
+    
     // ⚠️ 不再默认加载，等用户选择国家后再加载
 });
 
@@ -740,6 +743,62 @@ async function loadRegionOptions(country = 'TW') {
             }
             regionSelect.disabled = false;
         }
+    }
+}
+
+// ========================================
+// 右上角時間地點選單（從 Google Sheet 讀取）
+// ========================================
+async function loadHeaderLocationOptions(country = 'TW') {
+    const locationSelect = document.getElementById('location-select');
+    
+    if (!locationSelect) {
+        return;
+    }
+    
+    try {
+        locationSelect.innerHTML = '<option value="">載入中...</option>';
+        locationSelect.disabled = true;
+        
+        const response = await fetch(GOOGLE_SCRIPT_URL + '?action=getRegions&country=' + country);
+        const result = await response.json();
+        
+        if (result.success && result.regions && result.regions.length > 0) {
+            locationSelect.innerHTML = '<option value="">時間地點</option>';
+            result.regions.forEach(region => {
+                const option = document.createElement('option');
+                option.value = region.id;
+                option.textContent = region.text;
+                locationSelect.appendChild(option);
+            });
+        } else {
+            locationSelect.innerHTML = '<option value="">目前無可用時間地點</option>';
+        }
+    } catch (error) {
+        console.error('❌ 載入時間地點選單錯誤:', error);
+        locationSelect.innerHTML = '<option value="">時間地點載入失敗</option>';
+    } finally {
+        locationSelect.disabled = false;
+    }
+}
+
+function initHeaderLocationSelect() {
+    const locationSelect = document.getElementById('location-select');
+    
+    if (!locationSelect) {
+        return;
+    }
+    
+    const countrySelect = document.getElementById('country');
+    const initialCountry = countrySelect && countrySelect.value ? countrySelect.value : 'TW';
+    
+    loadHeaderLocationOptions(initialCountry);
+    
+    if (countrySelect) {
+        countrySelect.addEventListener('change', () => {
+            const selectedCountry = countrySelect.value || 'TW';
+            loadHeaderLocationOptions(selectedCountry);
+        });
     }
 }
 

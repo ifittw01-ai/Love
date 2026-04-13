@@ -54,12 +54,10 @@
     <!-- 页面加载进度条 -->
     <div id="loading-bar"></div>
     
-    <!-- 語言切換器 -->
+    <!-- 時間地點選單 -->
     <div class="language-switcher">
-        <select id="language-select" onchange="setLanguage(this.value)">
-            <option value="zh-TW">繁體中文</option>
-            <option value="zh-CN">简体中文</option>
-            <option value="en">English</option>
+        <select id="location-select">
+            <option value="">時間地點</option>
         </select>
     </div>
 
@@ -73,7 +71,88 @@
     <!-- 顶部主视觉图 -->
     <div class="hero-image-section">
         <div class="hero-image-wrapper">
-            <img src="data/top.png" alt="AI大腦回春系統" class="hero-top-image" loading="lazy" width="1200" height="630">
+            <a href="javascript:void(0)" onclick="openModal()" aria-label="立即報名">
+                <img src="data/topN.png" alt="AI大腦回春系統" class="hero-top-image" loading="lazy" width="1200" height="630">
+            </a>
+        </div>
+    </div>
+
+    <!-- 第二頁主視覺圖 -->
+    <div class="hero-image-section">
+        <div class="hero-image-wrapper">
+            <img src="data/top2.jpg" alt="AI大腦回春系統" class="hero-top-image" loading="lazy" width="1200" height="630">
+        </div>
+    </div>
+
+    <!-- 第三頁主視覺圖 -->
+    <div class="hero-image-section">
+        <div class="hero-image-wrapper">
+            <img src="data/top3.jpg" alt="AI大腦回春系統" class="hero-top-image" loading="lazy" width="1200" height="630">
+        </div>
+    </div>
+
+    <!-- 第四頁主視覺圖 -->
+    <div class="hero-image-section">
+        <div class="hero-image-wrapper">
+            <img src="data/top4.jpg" alt="AI大腦回春系統" class="hero-top-image" loading="lazy" width="1200" height="630">
+        </div>
+    </div>
+
+    <!-- 第五頁主視覺圖 -->
+    <div class="hero-image-section">
+        <div class="hero-image-wrapper">
+            <a href="javascript:void(0)" onclick="openModal()" aria-label="立即報名">
+                <img src="data/top5.jpg" alt="AI大腦回春系統" class="hero-top-image" loading="lazy" width="1200" height="630">
+            </a>
+        </div>
+    </div>
+
+    <!-- 第六頁主視覺圖 -->
+    <div class="hero-image-section">
+        <div class="hero-image-wrapper">
+            <img src="data/top6.jpg" alt="AI大腦回春系統" class="hero-top-image" loading="lazy" width="1200" height="630">
+        </div>
+    </div>
+
+    <!-- 目标受众区 -->
+    <section class="target-audience">
+        <div class="container">
+            <h2 class="section-title" data-i18n="target-audience-title">誰適合與需要？</h2>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <h3 data-i18n="audience-1-title">高壓腦力工作者</h3>
+                    <p data-i18n="audience-1-subtitle">主管／行政／會計／業務／創作者／老師</p>
+                <!--<p data-i18n="audience-1-text">
+                        🌍 你不是不努力，是大腦長期超載。
+                        這套系統把訓練拆成->專注、記憶、提取練習＋簡單可做的護腦習慣，讓你工作更清晰、情緒更穩。</p>
+                -->
+                </div>
+                <div class="audience-card">
+                    <h3 data-i18n="audience-2-title">容易健忘、想提升記憶的你</h3>
+                    <p data-i18n="audience-2-subtitle">常忘東忘西／容易分心／講到一半忘了要說什麼</p>
+                    <!--<p data-i18n="audience-2-text">🌍 你需要的不是硬背，而是「記憶策略＋練習節奏」。我們用題庫與日常情境，讓你把記憶力用回來。
+                -->
+                </div>
+                <div class="audience-card">
+                    <h3 data-i18n="audience-3-title">需要大量學習與記憶的人</h3>
+                       <p data-i18n="audience-3-subtitle">學生／上班族／自學者／考試族</p>
+                    <!--<p data-i18n="audience-3-text">🌍 你最需要的是：可落地、可陪做、可追蹤。我們把訓練設計成「AI流程」。</p>
+                -->
+                </div>
+                <div class="audience-card">
+                    <h3 data-i18n="audience-4-title">重視健康與預防的你</h3>
+                    <p data-i18n="audience-4-subtitle">開始在意認知保健、想建立護腦習慣</p>
+                     <!--<p data-i18n="audience-4-text">🌍 這套系統把「運動、睡眠、壓力調節、社交刺激、腦力訓練」整理成一張可執行清單，幫你把健康真正做進生活裡。</p>
+                -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第七頁主視覺圖 -->
+    <div class="hero-image-section">
+        <div class="hero-image-wrapper">
+            <img src="data/top7.jpg" alt="AI大腦回春系統" class="hero-top-image" loading="lazy" width="1200" height="630">
         </div>
     </div>
 
@@ -89,12 +168,12 @@
             </h1>
             
             <div class="offer-box">
-                <ul class="features-list">
+                <!-- <ul class="features-list">
                     <li data-i18n="feature-1">✅ 用「AI讓大腦活化 × 記憶訓練」建立每天的認知保健流程</li>
                     <li data-i18n="feature-2">✅ 不需要昂貴器材、不需要醫學背景，只要願意跟著做</li>
                     <li data-i18n="feature-3">✅ 給所有年齡層的人，把專注力與清晰感找回來</li>
                     <li data-i18n="feature-4">✅ 這不是短期雞湯，是一套可追蹤、可複製的AI認知保健系統</li>
-                </ul>
+                </ul>-->
                 
                 <div class="pricing">
                     <p class="original-price"><span data-i18n="original-price">大腦活化系統（專業與系統化的訓練＋AI提醒）</span><span class="strikethrough">NT$2,000元.</span></p>
@@ -128,6 +207,13 @@
         </div>
     </section>
 
+    <!-- 第八頁主視覺圖 -->
+    <div class="hero-image-section">
+        <div class="hero-image-wrapper">
+            <img src="data/top8.jpg" alt="AI大腦回春系統" class="hero-top-image" loading="lazy" width="1200" height="630">
+        </div>
+    </div>
+
     <!-- 视频演示区 
     <section class="video-section">
         <div class="container">
@@ -141,43 +227,14 @@
         </div>
     </section> 
 
-    <!-- 目标受众区 -->
-    <section class="target-audience">
-        <div class="container">
-            <h2 class="section-title" data-i18n="target-audience-title">誰適合與需要？</h2>
-            <div class="audience-grid">
-                <div class="audience-card">
-                    <h3 data-i18n="audience-1-title">高壓腦力工作者</h3>
-                    <p data-i18n="audience-1-subtitle">主管／行政／會計／業務／創作者／老師</p>
-                    <p data-i18n="audience-1-text">
-                        🌍 你不是不努力，是大腦長期超載。
-                        這套系統把訓練拆成->專注、記憶、提取練習＋簡單可做的護腦習慣，讓你工作更清晰、情緒更穩。</p>
-                </div>
-                <div class="audience-card">
-                    <h3 data-i18n="audience-2-title">容易健忘、想提升記憶的你</h3>
-                    <p data-i18n="audience-2-subtitle">常忘東忘西／容易分心／講到一半忘了要說什麼</p>
-                    <p data-i18n="audience-2-text">🌍 你需要的不是硬背，而是「記憶策略＋練習節奏」。我們用題庫與日常情境，讓你把記憶力用回來。
-                </div>
-                <div class="audience-card">
-                    <h3 data-i18n="audience-3-title">家裡有長輩、你是照顧者</h3>
-                       <p data-i18n="audience-3-subtitle">照顧爸媽／陪伴長輩／家庭主要照顧者</p>
-                    <p data-i18n="audience-3-text">🌍 你最需要的是：可落地、可陪做、可追蹤。我們把訓練設計成「AI流程」。</p>
-                </div>
-                <div class="audience-card">
-                    <h3 data-i18n="audience-4-title">重視健康與預防的你</h3>
-                    <p data-i18n="audience-4-subtitle">開始在意認知保健、想建立護腦習慣</p>
-                    <p data-i18n="audience-4-text">🌍 這套系統把「運動、睡眠、壓力調節、社交刺激、腦力訓練」整理成一張可執行清單，幫你把健康真正做進生活裡。</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
-    <!-- Before vs After 对比区 -->
+    <!-- Before vs After 对比区 
     <section class="comparison-section">
         <div class="container">
             <div class="comparison-wrapper">
                 <div class="before-box">
-                    <!-- 痛点图片 -->
+                    <!-- 痛点图片 
                     <div class="comparison-image-wrapper">
                         <img src="data/cannot get customer.png" alt="無法獲客的困擾" class="comparison-image" loading="lazy">
                     </div>
@@ -196,7 +253,7 @@
                 </div>
                 
                 <div class="after-box">
-                    <!-- 成功获客图片 -->
+                    <!-- 成功获客图片 
                     <div class="comparison-image-wrapper">
                         <img src="data/get customer.png" alt="成功獲客" class="comparison-image" loading="lazy" width="800" height="600">
                     </div>
@@ -212,7 +269,7 @@
             </div>
         </div>
     </section>
-
+    -->
     <!-- 新日常场景 -->
     <section class="new-daily-life">
         <div class="container">
@@ -230,14 +287,14 @@
                 </div>
                 <div class="scenario-item">
                     <div class="scenario-icon">📌</div>
-                    <p data-i18n="scenario-2">打開手機：今天的訓練已排好（注意力→記憶→提取）</p>
+                    <p data-i18n="scenario-2">學習與記憶的節奏更順暢</p>
                 </div>
                 <div class="scenario-item">
                     <div class="scenario-icon">📈</div>
-                    <p data-i18n="scenario-3">AI系統幫你完成了最有效的訓練</p>
+                    <p data-i18n="scenario-3">向大腦退化說再見</p>
                 </div>
             </div>
-            <p class="highlight-text" data-i18n="highlight-text">✨ 這就是「大腦活化系統」帶來的安心感 ✨</p>
+            <p class="highlight-text" data-i18n="highlight-text">✨ 這就是「AI大腦回春系統」帶來的安心感 ✨</p>
         </div>
     </section>
 
@@ -282,7 +339,7 @@
         </div>
     </section>
 
-    <!-- 学员评价 -->
+    <!-- 学员评价 
     <section class="testimonials">
         <div class="container">
             <h2 class="section-title stroke-title" data-i18n="testimonials-title">真實學員回饋</h2>
@@ -425,7 +482,7 @@
         </div>
     </section>
 --> 
-    <!-- FAQ区域 -->
+    <!-- FAQ区域 
     <section class="faq-section">
         <div class="container">
             <h2 class="section-title" data-i18n="faq-title">常見問題</h2>

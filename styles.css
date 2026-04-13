@@ -125,7 +125,7 @@ body {
     transform: translateY(-2px);
 }
 
-#language-select {
+#location-select {
     border: none;
     background: transparent;
     padding: 8px 15px;
@@ -139,11 +139,11 @@ body {
     font-family: inherit;
 }
 
-#language-select:hover {
+#location-select:hover {
     background: var(--light-bg);
 }
 
-#language-select option {
+#location-select option {
     padding: 10px;
     background: var(--white);
     color: var(--text-dark);
@@ -157,7 +157,7 @@ body {
         padding: 5px;
     }
     
-    #language-select {
+    #location-select {
         font-size: 0.85rem;
         padding: 6px 10px;
     }

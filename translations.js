@@ -34,8 +34,8 @@ const translations = {
         'audience-2-title': '容易健忘、想提升記憶的你',
         'audience-2-subtitle': '常忘東忘西／容易分心／講到一半忘了要說什麼',
         'audience-2-text': '🌍 你需要的不是硬背，而是「記憶策略＋練習節奏」。我們用題庫與日常情境，讓你把記憶力用回來。',
-        'audience-3-title': '家裡有長輩、你是照顧者',
-        'audience-3-subtitle': '照顧爸媽／陪伴長輩／家庭主要照顧者',
+        'audience-3-title': '需要大量學習與記憶的人',
+        'audience-3-subtitle': '學生／上班族／自學者／考試族',
         'audience-3-text': '🌍 你最需要的是：可落地、可陪做、可追蹤。我們把訓練設計成「AI流程」。',
         'audience-4-title': '重視健康與預防的你',
         'audience-4-subtitle': '開始在意認知保健、想建立護腦習慣',
@@ -58,12 +58,12 @@ const translations = {
         // 新日常場景
         'daily-life-title': '有了AI大腦回春系統之後....',
         'scenario-1': '早上起床，不再覺得腦袋沉沉的',
-        'scenario-2': '打開手機：今天的訓練已排好（注意力→記憶→提取）',
-        'scenario-3': 'AI系統幫你完成了最有效的訓練',
+        'scenario-2': '學習與記憶的節奏更順暢',
+        'scenario-3': '向大腦退化說再見',
         'scenario-4': '若你是照顧者：長輩也能跟著做',
         'scenario-5': '',
         'scenario-6': '',
-        'highlight-text': '✨ 這就是「大腦活化系統」帶來的安心感 ✨',
+        'highlight-text': '✨ 這就是「AI大腦回春系統」帶來的安心感 ✨',
         
         // 中間 CTA
         'urgency-badge': '報名人數已超過 92%，優惠隨時截止',
