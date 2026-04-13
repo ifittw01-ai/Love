@@ -793,6 +793,7 @@ function initHeaderLocationSelect() {
     const initialCountry = countrySelect && countrySelect.value ? countrySelect.value : 'TW';
     
     loadHeaderLocationOptions(initialCountry);
+    updateSelectWidth(locationSelect);
     
     if (countrySelect) {
         countrySelect.addEventListener('change', () => {
@@ -800,6 +801,34 @@ function initHeaderLocationSelect() {
             loadHeaderLocationOptions(selectedCountry);
         });
     }
+    
+    locationSelect.addEventListener('change', () => updateSelectWidth(locationSelect));
+}
+
+function updateSelectWidth(select) {
+    const selectedOption = select.options[select.selectedIndex];
+    if (!selectedOption) {
+        return;
+    }
+    
+    const text = selectedOption.textContent || '';
+    const style = window.getComputedStyle(select);
+    const font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+    
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    if (!context) {
+        return;
+    }
+    
+    context.font = font;
+    const textWidth = context.measureText(text).width;
+    
+    const paddingLeft = parseFloat(style.paddingLeft) || 0;
+    const paddingRight = parseFloat(style.paddingRight) || 0;
+    const arrowSpace = 24; // 預留下拉箭頭空間
+    
+    select.style.width = `${Math.ceil(textWidth + paddingLeft + paddingRight + arrowSpace)}px`;
 }
 
 // ========================================
