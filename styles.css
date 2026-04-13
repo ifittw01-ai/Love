@@ -203,6 +203,18 @@ body {
     object-fit: cover;
 }
 
+.hero-link {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.hero-link img {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
 /* 顶部横幅 */
 .top-banner {
     background: var(--gradient-primary);
