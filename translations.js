@@ -56,20 +56,20 @@ const translations = {
         'after-5': '✅ <strong>思緒更清晰、生活更踏實。</strong>',
         
         // 新日常場景
-        'daily-life-title': '有了AI大腦回春系統之後....',
+        'daily-life-title': '有了AI身腦齡活學院之後....',
         'scenario-1': '早上起床，不再覺得腦袋沉沉的',
         'scenario-2': '學習與記憶的節奏更順暢',
         'scenario-3': '向大腦退化說再見',
         'scenario-4': '若你是照顧者：長輩也能跟著做',
         'scenario-5': '',
         'scenario-6': '',
-        'highlight-text': '✨ 這就是「AI大腦回春系統」帶來的安心感 ✨',
+        'highlight-text': '✨ 這就是「AI身腦齡活學院」帶來的安心感 ✨',
         
         // 中間 CTA
         'urgency-badge': '報名人數已超過 92%，優惠隨時截止',
         'mid-cta-original': '原價 NT$2,000元',
         'mid-cta-current': '✅ 現在限時線上報名中',
-        'package-info': 'AI大腦回春系統',
+        'package-info': 'AI身腦齡活學院',
         
         // 學員評價
         'testimonials-title': '真實學員回饋',
@@ -78,10 +78,10 @@ const translations = {
         'testimonial-1-text': '以前每天開會到一半會突然卡住，做了兩週後，最明顯是「抓重點更快」，晚上也比較不焦慮。<strong>生活品質大大提升</strong>',
         'testimonial-2-name': '陳小姐',
         'testimonial-2-role': '兩寶媽',
-        'testimonial-2-text': '報名<strong>AI大腦回春系統</strong>，一開始還有點懷疑，就試試吧。沒想到一啟動系統，不到一週，<strong>本來以為自己只是累，結果是長期分心。每天真的做得到，而且我開始能把事情一件件完成。</strong>真的太神奇了',
+        'testimonial-2-text': '報名<strong>AI身腦齡活學院</strong>，一開始還有點懷疑，就試試吧。沒想到一啟動系統，不到一週，<strong>本來以為自己只是累，結果是長期分心。每天真的做得到，而且我開始能把事情一件件完成。</strong>真的太神奇了',
         'testimonial-3-name': '嚴太太',
         'testimonial-3-role': '退休者',
-        'testimonial-3-text': '我最需要的是「讓大腦活化年輕化」。AI把流程變簡單，很開心遇到<strong>AI大腦回春系統，</strong>還可以學會最先進的AI能力，真的太棒了。',
+        'testimonial-3-text': '我最需要的是「讓大腦活化年輕化」。AI把流程變簡單，很開心遇到<strong>AI身腦齡活學院，</strong>還可以學會最先進的AI能力，真的太棒了。',
         
         // FAQ
         'faq-title': '常見問題',

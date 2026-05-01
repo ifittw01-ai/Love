@@ -43,7 +43,7 @@ function getPromoterMapping() {
     for (let i = 1; i < data.length; i++) {
       const refCode = String(data[i][0]).trim();
       const email = String(data[i][1]).trim();
-      const name = String(data[i][2] || '').trim() || 'AI大腦回春系統';  // C列：姓名，如果没有则使用默认值
+      const name = String(data[i][2] || '').trim() || 'AI身腦齡活學院';  // C列：姓名，如果没有则使用默认值
       
       if (refCode && email) {
         mapping[refCode] = {
@@ -119,7 +119,7 @@ function getPromoterInfo(refCode) {
   const promoterMapping = getPromoterMapping();
   const defaultInfo = {
     email: DEFAULT_EMAIL,
-    name: 'AI大腦回春系統'
+    name: 'AI身腦齡活學院'
   };
   
   const promoterInfo = promoterMapping[refCode] || defaultInfo;
@@ -185,7 +185,7 @@ function saveCustomerToSheet(customerData) {
       customerData.customerWhatsapp,  // WhatsApp
       customerData.newsletter,        // 訂閱電子報
       customerData.refCode || '無',   // 推廣代碼
-      customerData.promoterName || 'AI大腦回春系統',  // 推廣人員姓名
+      customerData.promoterName || 'AI身腦齡活學院',  // 推廣人員姓名
       customerData.targetEmail        // 推廣人員郵箱
     ];
     
@@ -314,7 +314,7 @@ WhatsApp：${customerWhatsapp}
 祝您成交順利！🎉
 
 ---
-AI大腦回春系統
+AI身腦齡活學院
 自動通知系統
     `.trim();
     
@@ -331,13 +331,13 @@ AI大腦回春系統
     
     // 發送確認郵件給報名客戶
     if (customerEmail) {
-      const customerSubject = `感謝您報名「AI大腦回春系統」`;
+      const customerSubject = `感謝您報名「AI身腦齡活學院」`;
       const regionInfo = customerRegion ? `\n\n記得您的時間與地址：${customerRegion}` : '';
       
       const customerBody = `
 ${customerName}，
 
-感謝您對「AI大腦回春系統」有興趣！${regionInfo}
+感謝您對「AI身腦齡活學院」有興趣！${regionInfo}
 
 歡迎您的到來！
 
@@ -356,7 +356,7 @@ ${customerName}，
 如有任何疑問，歡迎直接聯繫您的顧問！
 
 ---
-AI大腦回春系統 團隊
+AI身腦齡活學院 團隊
       `.trim();
       
       try {
@@ -462,7 +462,7 @@ function testPromoterCode() {
   Logger.log('📧 推广人员邮箱: ' + promoterInfo.email);
   Logger.log('👤 推广人员姓名: ' + promoterInfo.name);
   
-  if (promoterInfo.name === 'AI大腦回春系統') {
+  if (promoterInfo.name === 'AI身腦齡活學院') {
     Logger.log('⚠️ 警告：使用的是默认值，说明推广代码 "' + testCode + '" 没有在 Sheet 中找到！');
   } else {
     Logger.log('✅ 成功找到推广人员信息！');
@@ -496,7 +496,7 @@ function testCustomerEmail() {
   const customerBody = `
 ${testCustomerName}，
 
-感謝您對「AI大腦回春系統」有興趣！${regionInfo}
+感謝您對「AI身腦齡活學院」有興趣！${regionInfo}
 
 歡迎您的到來！
 
@@ -515,7 +515,7 @@ ${testCustomerName}，
 如有任何疑問，歡迎直接聯繫您的顧問！
 
 ---
-AI大腦回春系統 團隊
+AI身腦齡活學院 團隊
   `.trim();
   
   Logger.log('=== 客户将收到的邮件内容 ===');
@@ -524,10 +524,10 @@ AI大腦回春系統 團隊
   Logger.log('=== 测试完成 ===');
   
   // 检查是否使用默认值
-  if (promoterInfo.name === 'AI大腦回春系統') {
+  if (promoterInfo.name === 'AI身腦齡活學院') {
     Logger.log('');
     Logger.log('⚠️⚠️⚠️ 警告 ⚠️⚠️⚠️');
-    Logger.log('客户邮件中显示的是默认值 "AI大腦回春系統"');
+    Logger.log('客户邮件中显示的是默认值 "AI身腦齡活學院"');
     Logger.log('原因：推广代码 "' + testRefCode + '" 在 Google Sheet 中找不到匹配项');
     Logger.log('');
     Logger.log('请检查：');

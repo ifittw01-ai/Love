@@ -328,7 +328,7 @@ WhatsApp：${customerWhatsapp}
 祝您成交順利！🎉
 
 ---
-AI大腦回春系統
+AI身腦齡活學院
 自動通知系統
     `.trim();
     
@@ -345,13 +345,13 @@ AI大腦回春系統
     
     // 發送確認郵件給報名客戶
     if (customerEmail) {
-      const customerSubject = `感謝您報名「AI大腦回春系統」`;
+      const customerSubject = `感謝您報名「AI身腦齡活學院」`;
       const regionInfo = customerRegion ? `\n\n記得您的時間與地址：${customerRegion}` : '';
       
       const customerBody = `
 ${customerName}，
 
-感謝您對「AI大腦回春系統」有興趣！${regionInfo}
+感謝您對「AI身腦齡活學院」有興趣！${regionInfo}
 
 歡迎您的到來！
 
@@ -363,7 +363,7 @@ ${customerName}，
 我們期待與您在社群中見面，一起探索 AI 創業的無限可能！🚀
 
 ---
-AI大腦回春系統 團隊
+AI身腦齡活學院 團隊
       `.trim();
       
       try {
