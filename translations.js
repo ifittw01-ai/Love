@@ -12,7 +12,7 @@ const translations = {
         'feature-3': '✅ 給所有年齡層的人，把專注力與清晰感找回來',
         'feature-4': '✅ 這不是短期雞湯，是一套可追蹤、可複製的AI認知保健系統',
         'original-price': '大腦活化系統（專業與系統化的訓練＋AI提醒）',
-        'current-price': '✅ 立即了解',
+        'current-price': '✅ 按報名查看時間地點',
         'highlight': '限時免費',
         'urgency-text': '⏱️ 優惠結束 → 立刻回到 NT$2,000！截止 11.59pm ⏱️',
         'cta-button': '搶先報名',
